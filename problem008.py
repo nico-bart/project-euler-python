@@ -38,7 +38,7 @@ newstring = string.replace('\n', '')
 biggestProd = 1
 for i in range(0, len(newstring)-12):
     shortstring = newstring[i:(i+13)]
-    
+
     prod = 1
     for j in range(0, len(shortstring)):
         if shortstring[j] == 0:
@@ -50,4 +50,4 @@ for i in range(0, len(newstring)-12):
         biggestProd = prod
     print(prod)
 
-print(biggestProd)
+print("The biggest product is:", biggestProd)

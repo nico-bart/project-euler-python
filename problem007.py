@@ -1,10 +1,13 @@
-# By listing the first six prime numbers: 2, 3, 5, 7, 11, and 13, we can see that the 6th prime is 13.
+# By listing the first six prime numbers:
+# 2, 3, 5, 7, 11, and 13,
 #
-# What is the 10 001st prime number?
-import math
+# we can see that the 6th prime is 13. What is the 10 001st prime number?
+#
+print("What is the 10 001st prime number?")
 
-# Method # 1 ----------------------------------------
-# this gets quite slow for large Numbers
+# # Method # 1 ----------------------------------------
+# # this gets quite slow for large Numbers
+# import math
 # def primzahl(integ):
 #     for i in range(2, math.ceil(integ/2)+1 ):
 #         if integ%i == 0:
@@ -24,18 +27,19 @@ import math
 # Method Nr 2 --------------------------------------------
 # smarter method: Sieve of Eratosthenes
 N = 10000000
-primzahlCounterLimit = 10003
-primzahlCounter = 0
-gestrichen = []
+primeCounterLimit = 10001
+primeCounter = 0
+stroke = []
 for i in range(0, N):
-    gestrichen.append(False)
+    stroke.append(False)
 
 for i in range(2, N):
-    if not gestrichen[i]:
-        primzahlCounter += 1
-        print(primzahlCounter, i)
+    if not stroke[i]:
+        primeCounter += 1
+        print(primeCounter, i)
 
         for j in range(i*i, N, i):
-            gestrichen[j] = True
-    if primzahlCounter == primzahlCounterLimit:
+            stroke[j] = True
+    if primeCounter == primeCounterLimit:
         break
+print("Thats the 10 001st prime number.")

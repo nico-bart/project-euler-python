@@ -12,4 +12,15 @@
 #
 # 5, 7, 9, 11, 13, 16, 17, 19
 
+# import json
+# wikiPrimes = json.loads(open('E:/Dev/python/project-euler-python/wikiPrimes.json', 'r').read())
+# with open('E:/Dev/python/project-euler-python/wikiPrimes.dat', 'r') as f:
+# wikiPrimes = f.read().split(',','\n')
+# go brute force:
+# for i in wikiPrimes:
+#    if bign % i == 0:
+#        factors.append(i)
+#        bign /= i
+#        print(bign)
+
 print(5*7*9*11*13*16*17*19)

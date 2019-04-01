@@ -22,8 +22,11 @@
 # 1. create iterator that produces triangle numbers
 # 2. find all divosors of that numbers and count them
 import math
+import sys
+
 
 class TriNumGen:
+    # iterator that produces triangle numbers
     def __iter__(self):
         self.a = 2
         return self
@@ -35,12 +38,11 @@ class TriNumGen:
         self.a += 1
         return retval
 
-# generator function because its easier
 
-
-def triNumGen(limit):
+def triNumGen():
+    # generator function because it's easier
     retval = 0
-    for i in range(1, limit):
+    for i in range(1, sys.maxsize):
         retval += i
         yield retval
 
@@ -60,13 +62,11 @@ def divisorCount(number):
 # triClass = TriNumGen()
 # myIterClass = iter(triClass)
 
-# Downside to the iterfunction: needs limit(?)
+myIterFunc = triNumGen()
 
-limit = 10000000
-myIterFunc = triNumGen(limit)
-
-for i in range(0, limit):
+for i in range(0, sys.maxsize):
     TriNum = next(myIterFunc)
     divNum = divisorCount(TriNum)
     if divNum > 500:
         print(TriNum, " has ", divisorCount(TriNum), " Divisors")
+        break

@@ -6,8 +6,8 @@
 # Find the product abc.
 #
 # step 1: make a list of pythagorean triplets
-
 import math
+print("Find the Pythagorean triplet for which a + b + c = 1000.")
 
 for i in range(1, 500):
     for j in range(i, 500):
